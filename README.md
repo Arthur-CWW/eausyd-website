@@ -1,8 +1,8 @@
 ## Getting Started with Developement
 ### start a live server
 ```
-yarn install # only needed to update dependencies
-yarn dev
+pnpm install # only needed to update dependencies
+pnpm dev
 
 ```
 ### helpful extension if you use vscode

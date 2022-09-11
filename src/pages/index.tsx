@@ -2,17 +2,11 @@ import { Heading, HeaderContainer } from "../components/Header";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { FC } from "react";
 import { ButtonHeader } from "../components/Button";
-import { z } from "Zod";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+
 import { Newsletter } from "../components/Newsletter";
-// type TechnologyCardProps = {
-//   name: string;
-//   description: string;
-//   documentation: string;
-// };
+import { trpc } from "../utils/trpc";
+import { useEffect } from "react";
 
 export const CardwPhoto = ({
   image = "missing image",
@@ -21,12 +15,12 @@ export const CardwPhoto = ({
   description = "missing desc",
   href = "missing url",
 }) => {
-  const sizeOfRound = "sm";
   return (
     <div
-      className={`max-w-sm bg-white rounded-${sizeOfRound} border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 text-left relative`}
+      className={`max-w-sm bg-white rounded-sm overflow-hidden border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700
+       text-left relative`}
     >
-      <div className={`rounded-t-${sizeOfRound} w-full p-2 relative h-40 `}>
+      <div className={` w-full p-2 relative h-40 `}>
         Link
         <Image
           className="max-w-sm object-cover"
@@ -55,6 +49,8 @@ export const CardwPhoto = ({
 };
 
 const Home: NextPage = () => {
+  const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
+  useEffect(() => console.log(hello), [hello]);
   const cards = [
     {
       image: "/image/image.jpg",
@@ -81,7 +77,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Effective altruism Usyd</title>
+        <title>EAusyd| Home</title>
         <meta
           name={`University Club building a community around the principles and philosophy of Effective altruism`}
           content={`content about eausyd`}
@@ -124,4 +120,8 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-//
+
+// import { z } from "Zod";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import Link from "next/link";
+// import { FC, useEffect } from 'react';

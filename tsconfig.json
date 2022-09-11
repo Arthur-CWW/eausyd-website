@@ -6,7 +6,6 @@
       "dom.iterable",
       "esnext"
     ],
-    // "allowsyntheticdefaultimports": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,13 +18,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noUncheckedIndexedAccess": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/images/*": [
-        "./public/images"
-      ]
-    }
+    "noUncheckedIndexedAccess": true
   },
   "include": [
     "next-env.d.ts",
@@ -36,5 +29,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
+  ]
 }

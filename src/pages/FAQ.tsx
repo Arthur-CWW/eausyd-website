@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { HeaderContainer, Heading } from "src/components/Header";
-import { UpChevron } from "src/components/SVG";
+import {
+  HeaderContainer,
+  // Heading
+} from "../components/Header";
+import { UpChevron } from "../components/SVG";
 
 function SingleFaq({ Id = "error", content = "undefined", title = "string" }) {
   const [isOpen, setOpen] = useState(false);

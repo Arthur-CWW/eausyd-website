@@ -9,25 +9,23 @@ import { env } from "./src/env/server.mjs";
  * @constraint {{import('next').NextConfig}}
  */
 function defineNextConfig(config) {
-  config = {
-    images: {
-      domains: ['source.unsplash.com', 'images.unsplash.com'],
-    },
-    experimental: {
-      images: {
-        allowFutureImage: true
-      }
-    }
-
-  }
-
   return config;
 }
 
-
 export default defineNextConfig({
+  images: {
+    domains: ['source.unsplash.com', 'images.unsplash.com'],
+  },
+  experimental: {
+    images: {
+      allowFutureImage: true
+    }
+  },
   reactStrictMode: true,
   swcMinify: true,
+  // Next.js i18n docs: https://nextjs.org/docs/advanced-features/i18n-routing
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 });
-
-

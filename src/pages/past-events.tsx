@@ -1,50 +1,54 @@
 /* eslint-disable @next/next/no-img-element */
-import { SmallRoundButton } from "../components/Button";
+// import { SmallRoundButton } from "../components/Button";
 import { NextPage } from "next";
-import { UpChevron, RightSVG } from "../components/SVG";
-import Image from "next/image";
+import {
+  //  UpChevron,
+  RightSVG,
+} from "../components/SVG";
+import Head from "next/head";
+// import Image from "next/image";
 // const myLoader = ({ src, width, quality }) => {
 //   return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
 // };
-const CarouselPage = ({
-  image = "/",
-  image_alt = "none",
-  // TODO below
-  // heading = "missing heading",
-  // description = "missing desc",
-  // link = "missing url",
-}) => {
-  return (
-    <div className=" duration-700 ease-in-out bg-gray-800" data-carousel-item>
-      <div className="object-cover relative md:h-screen md:aspect-video flex justify-center items-center">
-        <img src={image} alt={image_alt} className="object-cover rounded-md" />
-      </div>
-    </div>
-  );
-};
-const ChangePage = ({ isRight = false }) => {
-  return (
-    <button
-      type="button"
-      className={`absolute top-0 ${
-        isRight ? "right-0" : "left-0"
-      } z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none`}
-      data-carousel-prev=""
-      onClick={() => console.log(isRight ? "isright" : "isleft")}
-    >
-      <span
-        className="inline-flex
-        items-center justify-center w-8 h-8
-        rounded-full      sm:w-10 sm:h-10
-        bg-white/30 dark:bg-gray-800/30
-        group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 "
-      >
-        <UpChevron className={`w-6 ${isRight ? "-rotate-90" : "rotate-90"} `} />
-        <span className="sr-only">{isRight ? "Next" : "Previous"}</span>
-      </span>
-    </button>
-  );
-};
+// const CarouselPage = ({
+//   image = "/",
+//   image_alt = "none",
+// TODO below
+// heading = "missing heading",
+// description = "missing desc",
+// link = "missing url",
+// }) => {
+//   return (
+//     <div className=" duration-700 ease-in-out bg-gray-800" data-carousel-item>
+//       <div className="object-cover relative md:h-screen md:aspect-video flex justify-center items-center">
+//         <img src={image} alt={image_alt} className="object-cover rounded-md" />
+//       </div>
+//     </div>
+//   );
+// };
+// const ChangePage = ({ isRight = false }) => {
+//   return (
+//     <button
+//       type="button"
+//       className={`absolute top-0 ${
+//         isRight ? "right-0" : "left-0"
+//       } z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none`}
+//       data-carousel-prev=""
+//       onClick={() => console.log(isRight ? "isright" : "isleft")}
+//     >
+//       <span
+//         className="inline-flex
+//         items-center justify-center w-8 h-8
+//         rounded-full      sm:w-10 sm:h-10
+//         bg-white/30 dark:bg-gray-800/30
+//         group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 "
+//       >
+//         <UpChevron className={`w-6 ${isRight ? "-rotate-90" : "rotate-90"} `} />
+//         <span className="sr-only">{isRight ? "Next" : "Previous"}</span>
+//       </span>
+//     </button>
+//   );
+// };
 const Slide = () => {
   const cards = [
     {
@@ -71,7 +75,14 @@ const Slide = () => {
   ];
   return (
     <>
-      <header></header>
+      <Head>
+        <title>EAusyd|Past Events</title>
+        <meta
+          name="description"
+          content="Some photos and desciptions of past events hosted by the society"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className="h-screen">
         <div
           id="controls-carousel"
