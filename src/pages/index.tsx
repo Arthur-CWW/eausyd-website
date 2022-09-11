@@ -74,6 +74,7 @@ const Home: NextPage = () => {
       href: "https://unsplash.com/photos/7341741rqgI",
     },
   ];
+
   return (
     <>
       <Head>
