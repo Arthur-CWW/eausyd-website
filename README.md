@@ -1,32 +1,41 @@
-
-
-- [Next-Auth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [TailwindCSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io) (using @next version? [see v10 docs here](https://alpha.trpc.io))
-
-
-## How do I deploy this?
-
-### Vercel
-
-We recommend deploying to [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). It makes it super easy to deploy NextJs apps.
-
-- Push your code to a GitHub repository.
-- Go to [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) and sign up with GitHub.
-- Create a Project and import the repository you pushed your code to.
-- Add your environment variables.
-- Click **Deploy**
-- Now whenever you push a change to your repository, Vercel will automatically redeploy your website!
-
-
-# get started
+# Getting Started with Developement
+## start a live server
 ```
-yarn install
+yarn install # only needed to update dependencies
 yarn dev
 
 ```
-# helpful extension if you use vscode
+## helpful extension if you use vscode
+
 @bradlc.vscode-tailwindcss
 @ms-vscode.vscode-typescript-next
 @dsznajder.es7-react-js-snippets
+@dbaeumer.vscode-eslint
+## Web stack
+
+## Quick filestructure overview
+public assets are exposed in the public/ directory e.g. for statically loading images
+that will be served
+
+each file in src/pages represent a page route
+the react components are in src/components
+
+## useful documentation
+- [Next-Auth.js](https://next-auth.js.org)
+- [TailwindCSS](https://tailwindcss.com)
+- [beta-react-docs](https://beta.reactjs.org/)
+- [react-docs](https://reactjs.org/docs/getting-started.html)
+
+## Todos
+### important
+[] aria accesibility
+[] Make a hero background for the home page
+[] fill in the content
+
+[] fix the colors since Helena wanted it to greenish
+[] dark mode
+[] simple animations
+[] add gif to readme
+[] refactor jsx
+[] figure why Image is broken
+[] intro page
